@@ -1,3 +1,4 @@
+
 package com.company;
 
 class MyThread extends Thread {
