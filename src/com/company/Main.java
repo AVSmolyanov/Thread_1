@@ -1,18 +1,14 @@
 package com.company;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+//import java.util.*;
+import java.util.concurrent.*;
 
 public class Main {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
 
-// Задача 1
+ // Задача 1
 
         ThreadGroup group = new ThreadGroup("Group1");
 
@@ -34,21 +30,18 @@ public class Main {
         group.interrupt();
 
 // Задача 2
-
-
-        ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-//                Executors.newCachedThreadPool();
-
-        Set<Callable<String>> callables = new HashSet<Callable<String>>();
-        for (int i = 1; i <= 4; i++) {
-            callables.add(new MyThreadWithCount());
-        }
-
-//        pool.invokeAll(callables);
-        String res = pool.invokeAny(callables);
-        pool.shutdown();
-        System.out.println("Результат самой быстрой задачи: " + res);
-
-
+//
+//
+//        ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+//        Callable<Integer> list[] = new MyCallable[4];
+//
+//        for (int i = 0; i < list.length; i++) {
+//            list[i] = new MyCallable();
+//        }
+//
+//        pool.invokeAll(Arrays.stream(list).toList());
+//        Integer res = pool.invokeAny(Arrays.stream(list).toList());
+//        pool.shutdown();
+//        System.out.println("Результат самой быстрой задачи: " + res);
     }
 }
